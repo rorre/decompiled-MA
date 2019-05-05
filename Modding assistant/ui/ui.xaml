@@ -1,0 +1,62 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:v="clr-namespace:System;assembly=mscorlib" xmlns:local="clr-namespace:Modding_assistant.Resources">
+	<v:String
+		x:Key="tI_sB">Select beatmap</v:String>
+	<v:String
+		x:Key="gB_songsDir">Osu beatmaps (songs) folder</v:String>
+	<v:String
+		x:Key="gB_avBtm">List of available beatmaps</v:String>
+	<v:String
+		x:Key="b_btmOpen">Open</v:String>
+	<v:String
+		x:Key="b_btmOpenOsu">From osu!</v:String>
+	<v:String
+		x:Key="tI_bI">Beatmap information</v:String>
+	<v:String
+		x:Key="gB_btm">Beatmap</v:String>
+	<v:String
+		x:Key="gB_diff">Difficulty settings</v:String>
+	<v:String
+		x:Key="l_SCV">Snapping check values:</v:String>
+	<v:String
+		x:Key="gB_sD">Select difficulty</v:String>
+	<v:String
+		x:Key="tI_gen">General</v:String>
+	<v:String
+		x:Key="tI_warn">Warnings</v:String>
+	<v:String
+		x:Key="tI_ss">Snapshots</v:String>
+	<v:String
+		x:Key="tI_oth">Difficulty strains</v:String>
+	<v:String
+		x:Key="b_settings">Open help/how-to</v:String>
+	<v:String
+		x:Key="b_update">Check for updates</v:String>
+	<v:String
+		x:Key="b_RC">Open RC</v:String>
+	<v:String
+		x:Key="hint_browse">Browse...</v:String>
+	<v:String
+		x:Key="hint_reload">Reload beatmaps list</v:String>
+	<v:String
+		x:Key="hint_opendir">Open beatmap directory</v:String>
+	<v:String
+		x:Key="hint_openssdir">Open snapshot directory</v:String>
+	<v:String
+		x:Key="hint_ssDelete">Delete snapshot</v:String>
+	<v:String
+		x:Key="hint_reloadB">Reload beatmap</v:String>
+	<v:String
+		x:Key="hint_snapshot">Create snapshot</v:String>
+	<v:String
+		x:Key="hint_Web">Open beatmap page</v:String>
+	<v:String
+		x:Key="hint_Spread">Show beatmap spread (std only)</v:String>
+	<v:String
+		x:Key="hint_apply">Apply</v:String>
+	<v:String
+		x:Key="l_snapshots">Select snapshot:</v:String>
+	<v:String
+		x:Key="cB_sett_getFI">Get "Beatmap setID | Creator | Author - Title" for the beatmaps listing.</v:String>
+	<v:String
+		x:Key="cB_sett_autoup">Check for updates at startup.</v:String>
+</ResourceDictionary>

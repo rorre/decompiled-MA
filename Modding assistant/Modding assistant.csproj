@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AE3F3777-BACE-4C19-8DDC-7A954B03B66D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Modding assistant</RootNamespace>
+    <AssemblyName>Modding assistant</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60DC8134-EBA5-43B8-BCC9-BB4BC16C2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ApplicationIcon>Modding assistant.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell">
+      <HintPath>C:\Users\Ren\Downloads\ma\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio">
+      <HintPath>C:\Users\Ren\Downloads\ma\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NVorbis">
+      <HintPath>C:\Users\Ren\Downloads\ma\NVorbis.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="mscorlib" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Microsoft\Xna\Framework\BoundingBox.cs" />
+    <Compile Include="Microsoft\Xna\Framework\Graphics\PackedVector\IPackedVector.2.cs" />
+    <Compile Include="Microsoft\Xna\Framework\Graphics\PackedVector\IPackedVector.cs" />
+    <Compile Include="Microsoft\Xna\Framework\Graphics\PackedVector\PackUtils.cs" />
+    <Compile Include="Microsoft\Xna\Framework\MathResources.cs" />
+    <Compile Include="Microsoft\Xna\Framework\Matrix.cs" />
+    <Compile Include="Microsoft\Xna\Framework\Plane.cs" />
+    <Compile Include="Microsoft\Xna\Framework\PlaneIntersectionType.cs" />
+    <Compile Include="Microsoft\Xna\Framework\Point.cs" />
+    <Compile Include="Microsoft\Xna\Framework\Rectangle.cs" />
+    <Compile Include="Microsoft\Xna\Framework\Vector2.cs" />
+    <Compile Include="Microsoft\Xna\Framework\Vector3.cs" />
+    <Compile Include="Microsoft\Xna\Framework\Vector4.cs" />
+    <Compile Include="Modding_assistant\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modding_assistant\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modding_assistant\maStrings\ap.cs" />
+    <Compile Include="Modding_assistant\MSNListener.cs" />
+    <Compile Include="Modding_assistant\Properties\Resources.cs" />
+    <Compile Include="Modding_assistant\Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Modding_assistant\Report\Report.cs" />
+    <Compile Include="Modding_assistant\Report\ReportLevel.cs" />
+    <Compile Include="Modding_assistant\Report\RunReport.cs" />
+    <Compile Include="Modding_assistant\Report\Strings.cs" />
+    <Compile Include="Modding_assistant\TaikoDraw.cs" />
+    <Compile Include="Modding_assistant\Utility\FastName.cs" />
+    <Compile Include="Modding_assistant\Utility\IniReader.cs" />
+    <Compile Include="Modding_assistant\Utility\osuReader.cs" />
+    <Compile Include="Modding_assistant\Utility\osuTree.cs" />
+    <Compile Include="Modding_assistant\Utility\Snapshot.cs" />
+    <Compile Include="Modding_assistant\Utility\SnapshotList.cs" />
+    <Compile Include="Modding_assistant\Utility\Timing.cs" />
+    <Compile Include="Modding_assistant\Utility\ut_Math.cs" />
+    <Compile Include="Modding_assistant\Utility\ut_Path.cs" />
+    <Compile Include="Modding_assistant\windows\ProgressBar.xaml.cs">
+      <DependentUpon>ProgressBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modding_assistant\windows\snapshot.xaml.cs">
+      <DependentUpon>snapshot.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modding_assistant\windows\w_spread.xaml.cs">
+      <DependentUpon>w_spread.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="osu\AFType.cs" />
+    <Compile Include="osu\AudioFile.cs" />
+    <Compile Include="osu\Beatmap\BeatmapInfo.cs" />
+    <Compile Include="osu\Beatmap\curves\Curve.cs" />
+    <Compile Include="osu\Beatmap\diffCalc\ppVal.cs" />
+    <Compile Include="osu\Beatmap\diffCalc\ppValCtB.cs" />
+    <Compile Include="osu\Beatmap\diffCalc\ppValMania.cs" />
+    <Compile Include="osu\Beatmap\diffCalc\ppValTaiko.cs" />
+    <Compile Include="osu\Beatmap\Difficulty.cs" />
+    <Compile Include="osu\Beatmap\Extensions.cs" />
+    <Compile Include="osu\Beatmap\Fruits\FruitObject.cs" />
+    <Compile Include="osu\Beatmap\Fruits\FruitObjectManager.cs" />
+    <Compile Include="osu\Beatmap\HitObject.cs" />
+    <Compile Include="osu\Beatmap\Mania\Column.cs" />
+    <Compile Include="osu\Beatmap\Skinning.cs" />
+    <Compile Include="osu\Break.cs" />
+    <Compile Include="osu\Color.cs" />
+    <Compile Include="osu\Constants.cs" />
+    <Compile Include="osu\DiffCalc\BeatmapDifficultyCalculatorFruits.cs" />
+    <Compile Include="osu\DiffCalc\BeatmapDifficultyCalculatorMania.cs" />
+    <Compile Include="osu\DiffCalc\BeatmapDifficultyCalculatorOsu.cs" />
+    <Compile Include="osu\DiffCalc\BeatmapDifficultyCalculatorTaiko.cs" />
+    <Compile Include="osu\DiffCalc\DifficultyHitObjectFruits.cs" />
+    <Compile Include="osu\DiffCalc\DifficultyHitObjectMania.cs" />
+    <Compile Include="osu\DiffCalc\DifficultyHitObjectOsu.cs" />
+    <Compile Include="osu\DiffCalc\DifficultyHitObjectTaiko.cs" />
+    <Compile Include="osu\DifficlutyModeType.cs" />
+    <Compile Include="osu\FruitType.cs" />
+    <Compile Include="osu\Graphics\Primitives\Line.cs" />
+    <Compile Include="osu\HitObjectHSType.cs" />
+    <Compile Include="osu\HitObjectType.cs" />
+    <Compile Include="osu\HitObject_Additions.cs" />
+    <Compile Include="osu\HitsoundSetType.cs" />
+    <Compile Include="osu\KiaiType.cs" />
+    <Compile Include="osu\Processor\BeatmapProcessor.cs" />
+    <Compile Include="osu\Processor\DifficultyProcessor.cs" />
+    <Compile Include="osu\Processor\ObjectsProcessor.cs" />
+    <Compile Include="osu\SliderType.cs" />
+    <Compile Include="osu\Strains.cs" />
+    <Compile Include="osu\TimingPoint.cs" />
+    <Compile Include="osu\UnsnappedType.cs" />
+    <Compile Include="osu\Usnapped.cs" />
+    <Compile Include="osu\UsnappedS.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Modding_assistant\Libraries\Microsoft\Xna\Framework\MathResources.resources" />
+    <EmbeddedResource Include="Modding_assistant\Properties\Resources.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Modding_assistant\Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="Modding_assistant\App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Modding_assistant\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modding_assistant\windows\ProgressBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modding_assistant\windows\snapshot.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modding_assistant\windows\w_spread.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ui\ui.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons\check.png" />
+    <Resource Include="icons\difficulties\easy-s.png" />
+    <Resource Include="icons\difficulties\expert-s.png" />
+    <Resource Include="icons\difficulties\hard-s.png" />
+    <Resource Include="icons\difficulties\insane-s.png" />
+    <Resource Include="icons\difficulties\normal-s.png" />
+    <Resource Include="icons\folder-open.png" />
+    <Resource Include="icons\main.ico" />
+    <Resource Include="icons\reload.png" />
+    <Resource Include="icons\s%20add.png" />
+    <Resource Include="icons\spread.png" />
+    <Resource Include="icons\trash.png" />
+    <Resource Include="icons\web.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

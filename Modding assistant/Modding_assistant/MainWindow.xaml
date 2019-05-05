@@ -1,0 +1,639 @@
+<Window
+	x:Class="Modding_assistant.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:Modding_assistant" xmlns:winformchart="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"
+	Name="wnd"
+	Title="Modding assistant v1.5.8"
+	Height="600"
+	Width="800"
+	WindowStartupLocation="CenterScreen"
+	MinWidth="640"
+	MinHeight="520"
+	Background="#FFFFFFFF"
+	Icon="Icons/main.ico"
+	Closing="Window_Closing"
+	Loaded="wnd_Loaded">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition
+				Width="17*" />
+			<ColumnDefinition
+				Width="360*" />
+			<ColumnDefinition
+				Width="415*" />
+		</Grid.ColumnDefinitions>
+		<TabControl
+			Name="tabControl_main"
+			Grid.ColumnSpan="3"
+			Margin="0,0,0,0">
+			<TabItem
+				Header="{DynamicResource tI_sB}">
+				<Grid
+					Background="#FFE5E5E5">
+					<GroupBox
+						Header="{DynamicResource gB_songsDir}"
+						Margin="10,5,10,0"
+						VerticalAlignment="Top"
+						Height="60">
+						<Grid
+							Margin="0">
+							<TextBox
+								Name="textBox_btmDir"
+								MaxLines="1"
+								IsUndoEnabled="False"
+								IsReadOnly="True"
+								Margin="5,5,70,0"
+								Height="26"
+								VerticalAlignment="Top" />
+							<Button
+								Name="button_btmDirBrowse"
+								Content="...&#xA;"
+								HorizontalAlignment="Right"
+								Height="25"
+								Margin="0,6,40,0"
+								VerticalAlignment="Top"
+								Width="25"
+								ToolTip="{DynamicResource hint_browse}"
+								Click="button_btmDirBrowse_Click" />
+							<Button
+								Name="button_btmReload"
+								HorizontalAlignment="Right"
+								Height="25"
+								Margin="0,6,10,0"
+								VerticalAlignment="Top"
+								Width="25"
+								ToolTip="{DynamicResource hint_reload}"
+								Click="button_btmReload_Click">
+								<StackPanel>
+									<Image
+										Source="Icons/Reload.png" />
+								</StackPanel>
+							</Button>
+						</Grid>
+					</GroupBox>
+					<GroupBox
+						Header="{DynamicResource gB_avBtm}"
+						Margin="10,70,10,10">
+						<Grid
+							Margin="0">
+							<Button
+								Name="button_btmOpen"
+								Content="{DynamicResource b_btmOpen}"
+								Height="25"
+								Margin="0,5,85,0"
+								VerticalAlignment="Top"
+								HorizontalAlignment="Right"
+								Width="85"
+								RenderTransformOrigin="0.906,0.72"
+								Click="button_btmOpen_Click" />
+							<TextBox
+								Name="textBox_btmSelect"
+								Margin="5,5,175,0"
+								MaxLines="5"
+								IsUndoEnabled="False"
+								VerticalContentAlignment="Center"
+								Padding="3,0,0,0"
+								Height="25"
+								VerticalAlignment="Top"
+								TextChanged="textBox_btmSelect_TextChanged" />
+							<ListBox
+								Name="listBox_btm"
+								Margin="5,38,5,5"
+								SelectionChanged="listBox_btm_SelectionChanged" />
+							<Button
+								Name="button_btmOpenOsu"
+								Content="{DynamicResource b_btmOpenOsu}"
+								HorizontalAlignment="Right"
+								Margin="0,5,5,0"
+								VerticalAlignment="Top"
+								Width="75"
+								Height="25"
+								RenderTransformOrigin="0.227,0.44"
+								Click="button_btmOpenOsu_Click" />
+						</Grid>
+					</GroupBox>
+				</Grid>
+			</TabItem>
+			<TabItem
+				Name="tabitem_bi"
+				Header="{DynamicResource tI_bI}"
+				HorizontalAlignment="Left"
+				VerticalAlignment="Top"
+				IsEnabled="False">
+				<Grid
+					Background="#FFE5E5E5"
+					Margin="0,0,0,0">
+					<Rectangle
+						Fill="#FFF4F4F5"
+						HorizontalAlignment="Left"
+						Margin="8,128,0,8"
+						Stroke="#FF000000"
+						Width="224" />
+					<Rectangle
+						Fill="#FFF4F4F5"
+						HorizontalAlignment="Left"
+						Height="120"
+						Margin="8,5,0,0"
+						Stroke="#FF000000"
+						VerticalAlignment="Top"
+						Width="224" />
+					<GroupBox
+						Name="groupBox_betmap"
+						Header="{DynamicResource gB_btm}"
+						Margin="10,5,0,0"
+						HorizontalAlignment="Left"
+						Width="220"
+						Height="118"
+						VerticalAlignment="Top"
+						IsEnabled="False">
+						<Grid
+							Margin="0">
+							<Button
+								Name="button_btmDirOpen"
+								Height="25"
+								VerticalAlignment="Top"
+								HorizontalAlignment="Right"
+								Width="25"
+								Margin="0,3,148,0"
+								ToolTip="{DynamicResource hint_opendir}"
+								Panel.ZIndex="5"
+								Click="button_btmDirOpen_Click">
+								<StackPanel>
+									<Image
+										Source="Icons/Folder-Open.png" />
+								</StackPanel>
+							</Button>
+							<Button
+								Name="button_btmDirRF"
+								Height="25"
+								VerticalAlignment="Top"
+								HorizontalAlignment="Right"
+								Width="25"
+								Margin="0,3,178,0"
+								ToolTip="{DynamicResource hint_reloadB}"
+								Panel.ZIndex="5"
+								Click="button_btmDirRF_Click">
+								<StackPanel>
+									<Image
+										Source="Icons/Reload.png" />
+								</StackPanel>
+							</Button>
+							<Button
+								Name="button_btmWeb"
+								Height="25"
+								VerticalAlignment="Top"
+								HorizontalAlignment="Right"
+								Width="25"
+								Margin="0,3,118,0"
+								ToolTip="{DynamicResource hint_Web}"
+								Panel.ZIndex="5"
+								Click="button_btmWeb_Click">
+								<StackPanel>
+									<Image
+										Source="Icons/Web.png" />
+								</StackPanel>
+							</Button>
+							<Button
+								Name="button_btmSpread"
+								Height="25"
+								VerticalAlignment="Top"
+								HorizontalAlignment="Right"
+								Width="25"
+								Margin="0,3,88,0"
+								ToolTip="{DynamicResource hint_Spread}"
+								Panel.ZIndex="5"
+								Click="button_btmSpread_Click">
+								<StackPanel>
+									<Image
+										Source="Icons/Spread.png" />
+								</StackPanel>
+							</Button>
+							<Button
+								Name="button_btmSS"
+								Height="25"
+								VerticalAlignment="Top"
+								HorizontalAlignment="Right"
+								Width="25"
+								Margin="0,3,58,0"
+								ToolTip="{DynamicResource hint_snapshot}"
+								Panel.ZIndex="5"
+								Click="button_btmSS_Click">
+								<StackPanel>
+									<Image
+										Source="Icons/S Add.png" />
+								</StackPanel>
+							</Button>
+							<TextBlock
+								Name="textBlock_biInfo"
+								Margin="5,30,0,5"
+								Text=""
+								Padding="0,3,0,0"
+								Width="200"
+								IsEnabled="False"
+								TextTrimming="CharacterEllipsis"
+								HorizontalAlignment="Left" />
+						</Grid>
+					</GroupBox>
+					<GroupBox
+						Name="groupBox_settings"
+						Header="{DynamicResource gB_diff}"
+						Margin="10,0,0,10"
+						HorizontalAlignment="Left"
+						Width="220"
+						IsEnabled="False"
+						Height="169"
+						VerticalAlignment="Bottom">
+						<Grid
+							Margin="0">
+							<Rectangle
+								Fill="#FFF4F4F5"
+								Stroke="#FF000000"
+								Margin="5,5,5,0"
+								Height="70"
+								VerticalAlignment="Top" />
+							<Button
+								Name="button_snapRF"
+								HorizontalAlignment="Right"
+								Height="25"
+								Margin="0,5,5,0"
+								VerticalAlignment="Top"
+								Width="25"
+								ToolTip="{DynamicResource hint_apply}"
+								Click="button_snapRF_Click">
+								<StackPanel>
+									<Image
+										Source="Icons/Check.png" />
+								</StackPanel>
+							</Button>
+							<Label
+								Name="label_snap"
+								Content="{DynamicResource l_SCV}"
+								Margin="5,0,0,0"
+								VerticalAlignment="Top"
+								HorizontalAlignment="Left" />
+							<Slider
+								Name="slider_snap_3"
+								IsSnapToTickEnabled="True"
+								Margin="10,50,75,0"
+								VerticalAlignment="Top"
+								SmallChange="1"
+								Minimum="1"
+								Maximum="4"
+								Value="4"
+								ValueChanged="slider_snap_3_ValueChanged" />
+							<Slider
+								Name="slider_snap_4"
+								IsSnapToTickEnabled="True"
+								Margin="10,25,75,0"
+								VerticalAlignment="Top"
+								Maximum="5"
+								Minimum="1"
+								SmallChange="1"
+								Value="5"
+								ValueChanged="slider_snap_4_ValueChanged" />
+							<Label
+								Name="label_snap_4"
+								Content="1/16"
+								Margin="0,20,35,0"
+								VerticalAlignment="Top"
+								HorizontalAlignment="Right" />
+							<Label
+								Name="label_snap_3"
+								Content="1/12"
+								Margin="0,45,35,0"
+								VerticalAlignment="Top"
+								HorizontalAlignment="Right" />
+						</Grid>
+					</GroupBox>
+					<GroupBox
+						Header="{DynamicResource gB_sD}"
+						Margin="10,130,0,184"
+						HorizontalAlignment="Left"
+						Width="220">
+						<Grid
+							Margin="0">
+							<ListBox
+								Name="listBox_diffs"
+								Margin="5,5,5,5"
+								ScrollViewer.VerticalScrollBarVisibility="Visible"
+								SelectionChanged="listBox_diffs_SelectionChanged" />
+						</Grid>
+					</GroupBox>
+					<TabControl
+						Name="tabControl_btmInfo"
+						Margin="235,5,5,8">
+						<TabItem
+							Header="{DynamicResource tI_gen}">
+							<Grid
+								Background="#FFE5E5E5">
+								<TextBox
+									Name="textBox_diffInfo"
+									Margin="5,5,5,5"
+									UndoLimit="1"
+									VerticalScrollBarVisibility="Visible"
+									AcceptsReturn="True"
+									IsReadOnly="True"
+									IsUndoEnabled="False"
+									TextWrapping="Wrap" />
+							</Grid>
+						</TabItem>
+						<TabItem
+							Header="{DynamicResource tI_oth}"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Top">
+							<Grid
+								Background="#FFE5E5E5">
+								<GroupBox
+									Name="groupBoxSpd"
+									Header="Speed"
+									Margin="3,3,3,0"
+									VerticalAlignment="Top"
+									Height="200">
+									<StackPanel>
+										<WindowsFormsHost
+											Name="host"
+											Height="175"
+											IsManipulationEnabled="True">
+											<winformchart:Chart
+												x:Name="Chart"
+												Dock="Fill"
+												BackColor="WhiteSmoke"
+												BackGradientStyle="TopBottom"
+												BackSecondaryColor="White"
+												BorderlineColor="AliceBlue"
+												BorderlineDashStyle="Solid"
+												BorderlineWidth="2"
+												MouseMove="Chart_MouseMove">
+												<winformchart:Chart.BorderSkin>
+													<winformchart:BorderSkin
+														SkinStyle="None" />
+												</winformchart:Chart.BorderSkin>
+												<winformchart:Chart.Series>
+													<winformchart:Series
+														Name="series"
+														ChartType="FastLine"
+														BorderColor="AliceBlue"
+														ShadowColor="Black" />
+													<winformchart:Series
+														BorderColor="IndianRed"
+														ChartType="FastLine"
+														Name="series2"
+														ShadowColor="Black" />
+												</winformchart:Chart.Series>
+												<winformchart:Chart.ChartAreas>
+													<winformchart:ChartArea
+														BackGradientStyle="TopBottom"
+														BorderDashStyle="Solid"
+														BorderColor="Gray"
+														BackSecondaryColor="White"
+														BackColor="Gainsboro"
+														Name="Default"
+														ShadowColor="Transparent" />
+												</winformchart:Chart.ChartAreas>
+											</winformchart:Chart>
+										</WindowsFormsHost>
+									</StackPanel>
+								</GroupBox>
+								<GroupBox
+									Name="groupBoxAim"
+									Header="Aim"
+									Margin="3,200,3,0"
+									Height="200"
+									VerticalAlignment="Top">
+									<StackPanel>
+										<WindowsFormsHost
+											Name="host1"
+											Height="175"
+											IsManipulationEnabled="True">
+											<winformchart:Chart
+												x:Name="Chart1"
+												Dock="Fill"
+												BackColor="WhiteSmoke"
+												BackGradientStyle="TopBottom"
+												BackSecondaryColor="White"
+												BorderlineColor="AliceBlue"
+												BorderlineDashStyle="Solid"
+												BorderlineWidth="2"
+												MouseMove="Chart1_MouseMove">
+												<winformchart:Chart.BorderSkin>
+													<winformchart:BorderSkin
+														SkinStyle="None" />
+												</winformchart:Chart.BorderSkin>
+												<winformchart:Chart.Series>
+													<winformchart:Series
+														Name="series"
+														ChartType="FastLine"
+														BorderColor="AliceBlue"
+														ShadowColor="Black" />
+													<winformchart:Series
+														BorderColor="IndianRed"
+														ChartType="FastLine"
+														Name="series2"
+														ShadowColor="Black" />
+												</winformchart:Chart.Series>
+												<winformchart:Chart.ChartAreas>
+													<winformchart:ChartArea
+														BackGradientStyle="TopBottom"
+														BorderDashStyle="Solid"
+														BorderColor="Gray"
+														BackSecondaryColor="White"
+														BackColor="Gainsboro"
+														Name="Default"
+														ShadowColor="Transparent" />
+												</winformchart:Chart.ChartAreas>
+											</winformchart:Chart>
+										</WindowsFormsHost>
+									</StackPanel>
+								</GroupBox>
+							</Grid>
+						</TabItem>
+						<TabItem
+							Header="{DynamicResource tI_ss}"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Top">
+							<Grid
+								Background="#FFE5E5E5">
+								<Button
+									Name="button_ssDirOpen"
+									Height="25"
+									VerticalAlignment="Top"
+									HorizontalAlignment="Left"
+									Width="25"
+									Margin="318,10,0,0"
+									ToolTip="{DynamicResource hint_openssdir}"
+									Panel.ZIndex="5"
+									IsEnabled="False"
+									Click="button_ssDirOpen_Click">
+									<StackPanel>
+										<Image
+											Source="Icons/Folder-Open.png" />
+									</StackPanel>
+								</Button>
+								<Button
+									Name="button_ssDelete"
+									Height="25"
+									VerticalAlignment="Top"
+									HorizontalAlignment="Left"
+									Width="25"
+									Margin="348,10,0,0"
+									ToolTip="{DynamicResource hint_ssDelete}"
+									Panel.ZIndex="5"
+									IsEnabled="False"
+									Click="button_ssDelete_Click">
+									<StackPanel>
+										<Image
+											Source="Icons/Trash.png" />
+									</StackPanel>
+								</Button>
+								<Label
+									Content="{DynamicResource l_snapshots}"
+									HorizontalAlignment="Left"
+									Margin="10,10,0,0"
+									VerticalAlignment="Top" />
+								<ComboBox
+									Name="comboBox_snapshots"
+									HorizontalAlignment="Left"
+									Margin="110,12,0,0"
+									VerticalAlignment="Top"
+									Width="200"
+									SelectionChanged="comboBox_snapshots_SelectionChanged" />
+								<RichTextBox
+									Name="richTextBox_snapshots"
+									Margin="5,41,5,5"
+									UndoLimit="1"
+									VerticalScrollBarVisibility="Visible"
+									AcceptsReturn="True"
+									IsDocumentEnabled="True"
+									IsReadOnly="True"
+									IsUndoEnabled="False">
+									<FlowDocument />
+								</RichTextBox>
+							</Grid>
+						</TabItem>
+						<TabItem
+							Header="{DynamicResource tI_warn}"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Top">
+							<Grid
+								Background="#FFE5E5E5">
+								<RichTextBox
+									Name="richTextBox_warningsText"
+									Margin="5,260,5,5"
+									UndoLimit="1"
+									VerticalScrollBarVisibility="Visible"
+									AcceptsReturn="True"
+									IsDocumentEnabled="True"
+									IsReadOnly="True"
+									IsUndoEnabled="False" />
+								<TreeView
+									Name="treeView_warnings"
+									Height="250"
+									Margin="5,5,5,0"
+									VerticalAlignment="Top"
+									SelectedItemChanged="treeView_warnings_SelectedItemChanged" />
+							</Grid>
+						</TabItem>
+						<TabItem
+							Name="TaikoTab"
+							Header="Taiko"
+							HorizontalAlignment="Left"
+							Height="20"
+							VerticalAlignment="Top"
+							Width="54">
+							<Grid
+								Name="TaikoGrid"
+								Background="#FFE5E5E5">
+								<Button
+									Name="TaikoZoomIn"
+									Height="25"
+									VerticalAlignment="Top"
+									HorizontalAlignment="Right"
+									Width="25"
+									Margin="0,5,35,0"
+									Content="+"
+									Click="TaikoZoomIn_Click" />
+								<Button
+									Name="TaikoZoomOut"
+									Height="25"
+									VerticalAlignment="Top"
+									HorizontalAlignment="Right"
+									Width="25"
+									Margin="0,5,5,0"
+									Content="-"
+									Click="TaikoZoomOut_Click" />
+								<ScrollViewer
+									Name="TaikoScroll"
+									HorizontalScrollBarVisibility="Visible"
+									VerticalScrollBarVisibility="Visible"
+									Margin="5,35,5,5"
+									Grid.ColumnSpan="2" />
+								<Slider
+									Name="Taikoslider"
+									IsSnapToTickEnabled="True"
+									Margin="0,10,114,0"
+									VerticalAlignment="Top"
+									Maximum="5"
+									HorizontalAlignment="Right"
+									Width="140"
+									ValueChanged="Taikoslider_ValueChanged" />
+								<Label
+									Name="labelTaiko"
+									Content="1/1"
+									Margin="0,5,81,0"
+									VerticalAlignment="Top"
+									HorizontalAlignment="Right"
+									Width="28" />
+							</Grid>
+						</TabItem>
+					</TabControl>
+				</Grid>
+			</TabItem>
+			<TabItem
+				Header="Settings"
+				HorizontalAlignment="Left"
+				VerticalAlignment="Top">
+				<Grid
+					Background="#FFE5E5E5">
+					<Button
+						Name="button_settings"
+						Content="{DynamicResource b_settings}"
+						HorizontalAlignment="Left"
+						Margin="10,109,0,0"
+						VerticalAlignment="Top"
+						Width="115"
+						Click="button_settings_Click" />
+					<Button
+						Name="button_update"
+						Content="{DynamicResource b_update}"
+						HorizontalAlignment="Left"
+						Margin="10,59,0,0"
+						VerticalAlignment="Top"
+						Width="115"
+						Click="button_update_Click" />
+					<Button
+						Name="button_openRC"
+						Content="{DynamicResource b_RC}"
+						HorizontalAlignment="Left"
+						Margin="10,84,0,0"
+						VerticalAlignment="Top"
+						Width="115"
+						Click="button_openRC_Click" />
+					<CheckBox
+						Name="checkBox_sett_getFI"
+						Content="{DynamicResource cB_sett_getFI}"
+						HorizontalAlignment="Left"
+						Margin="10,10,0,0"
+						VerticalAlignment="Top"
+						Checked="checkBox_sett_getFI_Checked"
+						Unchecked="checkBox_sett_getFI_Checked" />
+					<CheckBox
+						Name="checkBox_sett_autoUP"
+						Content="{DynamicResource cB_sett_autoup}"
+						HorizontalAlignment="Left"
+						Margin="10,30,0,0"
+						VerticalAlignment="Top"
+						Unchecked="checkBox_sett_autoUP_Unchecked"
+						Checked="checkBox_sett_autoUP_Unchecked" />
+				</Grid>
+			</TabItem>
+		</TabControl>
+	</Grid>
+</Window>
